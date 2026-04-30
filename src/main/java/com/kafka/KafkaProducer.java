@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 public class KafkaProducer 
 {
 	
-	private final KafkaTemplate<String, Object> kafkaTemplate;
+	private final KafkaTemplate<String, Order> kafkaTemplate;
 
 	public void sendOrderEvent(Order order) {
 		kafkaTemplate.send( "order-created", order );
